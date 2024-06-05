@@ -11,7 +11,7 @@ def basetest():
         )
     legend.add_entry(Rectangle(label='Test Rect', color='#111111'))
 
-    legend.create(figsize=(2, 2))
+    legend.create()
 
     legend.show()
 

@@ -49,6 +49,11 @@ class Legend():
                 handles=self.entries, loc='center', ncol=self.ncol
             )
 
+        self.fig.set_size_inches(
+            self.legend.get_window_extent().width/mpl.rcParams['figure.dpi']*1.02,
+            self.legend.get_window_extent().height/mpl.rcParams['figure.dpi']*1.02
+        )
+
     def show(self):
         """Show matplot figure containing the legend."""
         if self.legend is None:
