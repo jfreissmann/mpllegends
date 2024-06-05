@@ -3,7 +3,7 @@ from mpllegends.legend import Legend
 
 
 def basetest():
-    legend = Legend()
+    legend = Legend(fontfamily='serif', fontweight='bold', fontsize='large')
 
     legend.add_entry(Line(label='Test Line', color='r'))
     legend.add_entry(
