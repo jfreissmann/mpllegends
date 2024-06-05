@@ -16,7 +16,7 @@ class Legend():
 
         Entries will be displayed in the order they are added.
         """
-        self.entries.append(entry)
+        self.entries.append(entry.obj)
 
     def create(self, figsize=None):
         """Create matplotlib legend instance."""
