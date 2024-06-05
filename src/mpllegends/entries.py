@@ -47,6 +47,9 @@ class Marker(Entry):
             self.facecolor = kwargs['color']
             self.edgecolor = kwargs['color']
             del kwargs['color']
+        else:
+            self.facecolor = facecolor
+            self.edgecolor = edgecolor
 
         self.check_necessary_args(
             label=self.label, marker=self.marker, facecolor=self.facecolor,
@@ -78,6 +81,9 @@ class Rectangle(Entry):
             self.facecolor = kwargs['color']
             self.edgecolor = kwargs['color']
             del kwargs['color']
+        else:
+            self.facecolor = facecolor
+            self.edgecolor = edgecolor
 
         self.check_necessary_args(
             label=self.label, facecolor=self.facecolor
