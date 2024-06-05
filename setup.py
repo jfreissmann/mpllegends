@@ -7,7 +7,7 @@ setup(
     name='mpllegends',
     version='0.0.1',
     author='Jonas Freißmann',
-    author_email='jonas.freissmann@hs-flensburg.de',
+    author_email='jonas.freissmann@web.de',
     description='Customizable standalone matplotlib legends.',
     long_discription_content_type='text/markdown',
     long_discription=long_discription,
