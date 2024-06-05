@@ -65,9 +65,19 @@ class Marker(Entry):
 class Rectangle(Entry):
     """Legend entry of a rectangle."""
 
-    def __init__(self, label=None, facecolor=None, **kwargs):
+    def __init__(self, label=None, facecolor=None, edgecolor=None, **kwargs):
         self.label = label
-        self.facecolor = facecolor
+
+        if facecolor is not None and edgecolor is None:
+            self.facecolor = facecolor
+            self.edgecolor = facecolor
+        elif edgecolor is not None and facecolor is None:
+            self.edgecolor = edgecolor
+            self.facecolor = edgecolor
+        elif 'color' in kwargs and facecolor is None and edgecolor is None:
+            self.facecolor = kwargs['color']
+            self.edgecolor = kwargs['color']
+            del kwargs['color']
 
         self.check_necessary_args(
             label=self.label, facecolor=self.facecolor
