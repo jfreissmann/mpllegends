@@ -6,6 +6,7 @@ class Entry():
     """Base class of legend entries."""
 
     def check_necessary_args(self, **kwargs):
+        """Check **kwargs for None values raise ValueError if any is found."""
         for name, value in kwargs.items():
             if value is None:
                 raise ValueError(
@@ -14,7 +15,22 @@ class Entry():
 
 
 class Line(Entry):
-    """Legend entry of a line with or without marker."""
+    """
+    Legend entry of a line with or without marker.
+
+    Parameters
+    ----------
+
+    label : str
+        Label to be placed beside the line.
+
+    color : str
+        Color of the line. Any color that is available in matplotlib.
+
+    **kwargs : dict of keyword arguments
+        Any keyword arguments that `matplotlib.lines.Line2D` class takes, except
+        `label` and `color`. Set `marker` to add a marker to the line.
+    """
 
     def __init__(self, label=None, color=None, **kwargs):
         self.label = label
@@ -30,7 +46,35 @@ class Line(Entry):
 
 
 class Marker(Entry):
-    """Legend entry of a marker."""
+    """
+    Legend entry of a marker.
+
+    Parameters
+    ----------
+
+    label : str
+        Label to be placed beside the marker.
+
+    marker : str
+        Marker type as defined by matplotlib, e.g. 'o', 'x' or 's'.
+
+    facecolor : str
+        Color of the face of the marker. Any color that is available in
+        matplotlib. If only `facecolor` is set, `edgecolor` takes the same
+        value.
+
+    edgecolor : str
+        Color of the edge of the marker. Any color that is available in
+        matplotlib. If only `edgecolor` is set, `facecolor` takes the same
+        value.
+
+    **kwargs : dict of keyword arguments
+        Any keyword arguments that `matplotlib.lines.Line2D` class takes, except
+        `label`, `marker`, `facecolor` and `edgecolor`. If `color` is set and
+        `facecolor` and `edgecolor` are not, that color is used for both of
+        them. `color` can not be set, if any of `facecolor` and `edgecolor` are
+        set.
+    """
 
     def __init__(self, label=None, marker=None, facecolor=None, edgecolor=None,
                  **kwargs):
@@ -66,7 +110,31 @@ class Marker(Entry):
 
 
 class Rectangle(Entry):
-    """Legend entry of a rectangle."""
+    """
+    Legend entry of a rectangle.
+
+    Parameters
+    ----------
+
+    label : str
+        Label to be placed beside the rectangle.
+
+    facecolor : str
+        Color of the face of the rectangle. Any color that is available in
+        matplotlib. If only `facecolor` is set, `edgecolor` takes the same
+        value.
+
+    edgecolor : str
+        Color of the edge of the rectangle. Any color that is available in
+        matplotlib. If only `edgecolor` is set, `facecolor` takes the same
+        value.
+
+    **kwargs : dict of keyword arguments
+        Any keyword arguments that `matplotlib.lines.Line2D` class takes, except
+        `label`, `facecolor` and `edgecolor`. If `color` is set and `facecolor`
+        and `edgecolor` are not, that color is used for both of them. `color`
+        can not be set, if any of `facecolor` and `edgecolor` are set.
+    """
 
     def __init__(self, label=None, facecolor=None, edgecolor=None, **kwargs):
         self.label = label
