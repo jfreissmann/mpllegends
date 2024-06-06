@@ -130,10 +130,11 @@ class Rectangle(Entry):
         value.
 
     **kwargs : dict of keyword arguments
-        Any keyword arguments that `matplotlib.lines.Line2D` class takes, except
-        `label`, `facecolor` and `edgecolor`. If `color` is set and `facecolor`
-        and `edgecolor` are not, that color is used for both of them. `color`
-        can not be set, if any of `facecolor` and `edgecolor` are set.
+        Any keyword arguments that `matplotlib.patches.Patch` class takes,
+        except `label`, `facecolor` and `edgecolor`. If `color` is set and
+        `facecolor` and `edgecolor` are not, that color is used for both of
+        them. `color` can not be set, if any of `facecolor` and `edgecolor` are
+        set.
     """
 
     def __init__(self, label=None, facecolor=None, edgecolor=None, **kwargs):
