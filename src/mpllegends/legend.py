@@ -128,7 +128,7 @@ class Legend():
             plt.tight_layout()
             plt.show()
 
-    def save(self, filepath):
+    def save(self, filepath, **kwargs):
         """
         Save file of the legend.
 
@@ -138,9 +138,12 @@ class Legend():
         filepath : str
             Absolute or relative path to the file that should be created. See
             matplotlib documentation for supported file types.
+
+        **kwargs
+            Keyword arguments the matplotlib.pyplot.savefig takes in.
         """
         if self.legend is None:
             print('No legend exists that can be shown. Use `create` method.')
         else:
             plt.tight_layout()
-            plt.savefig(filepath)
+            plt.savefig(filepath, **kwargs)
