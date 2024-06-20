@@ -29,6 +29,36 @@ If you want to use an editable version of the package, e.g. if you want to contr
 python -m pip install -e "path/to/the/mpllengends/dir/"
 ```
 
+## Usage
+
+```python
+from mpllegends.entries import Line, Marker, Rectangle
+from mpllegends.legend import Legend
+
+legend = Legend(
+    ncol=3, borderpad=0.5, fontweight='bold', fontsize='large',
+    columnspacing=1.5
+)
+
+legend.add_entry(Line(label='Test Line', color='r'))
+legend.add_entry(
+    Marker(
+        label='Test Marker', marker='o', markersize=12,
+        facecolor='b', edgecolor='g'
+    )
+)
+legend.add_entry(Rectangle(label='Test Rect', color='#111111'))
+
+legend.create()
+
+legend.save('example_legend.pdf')
+legend.save('example_legend.png', dpi=300)
+
+legend.show()
+```
+
+![Example of a legend created by the code above.](example_legend.png)
+
 ## License
 
 See the `LICENSE` file for further information.
