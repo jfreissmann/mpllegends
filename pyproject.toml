@@ -1,0 +1,23 @@
+[build-system]
+requires = ["flit"]
+build-backend = "flit.buildapi"
+
+[project]
+name = "mpllegends"
+version = "0.0.1"
+description = "Customizable standalone matplotlib legends."
+readme = "README.md"
+readme-content-type = "text/markdown"
+authors = [
+    { name = "Jonas Freißmann", email = "jonas.freissmann@web.de" }
+]
+license = { text = "MIT" }
+classifiers = [
+    "License :: OSI Approved :: MIT License"
+]
+urls = { "Homepage" = "https://github.com/jfreissmann/mpllegends" }
+requires-python = ">=3.9"
+dependencies = ["matplotlib>=3.8.0"]
+
+[tool.flit.module]
+name = "mpllegends"
