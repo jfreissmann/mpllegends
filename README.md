@@ -16,7 +16,11 @@ conda activate my_new_env
 If you want to build the package locally and install it, you should use these commands from the root directory of the repository:
 
 ```
-python setup.py sdist bdist_wheel
+python install flit
+```
+
+```
+flit buil
 ```
 
 ```
